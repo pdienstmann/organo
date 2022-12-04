@@ -1,5 +1,3 @@
-Figma:
-
 Objetivos:
 Aprender a utilizar Hooks.
 Entender SetState.
