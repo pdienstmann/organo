@@ -11,7 +11,7 @@ const TextField = (props) => {
     return(
         <div className="campo-texto">
             <label>{props.label}</label>
-            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={props.placeholder}></input>
+            <input autoFocus={props.autoFocus} value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={props.placeholder}></input>
         </div>
     )
 

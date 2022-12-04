@@ -6,9 +6,7 @@ import "./Form.css"
 
 
 const Form = (props) => {
-
-    const times = ['Programação', 'Front End', 'Data Science', 'Devops', 'UX e Design', 'Mobile', 'Inovação e gestão'];
-
+    
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -16,6 +14,7 @@ const Form = (props) => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
+        
         console.log('Form foi submetido', nome, cargo, imagem, time);
         props.aoColaboradorCadastrado({
             nome,
@@ -23,6 +22,11 @@ const Form = (props) => {
             imagem,
             time
         })
+
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
 
     }
     return(
@@ -35,6 +39,7 @@ const Form = (props) => {
                 placeholder="Digite seu nome"
                 valor={nome}
                 aoAlterado={valor=> setNome(valor)}
+                autoFocus={true}
                 
                 
                 />
@@ -60,7 +65,7 @@ const Form = (props) => {
                 
                 <List 
                 label="Time" 
-                itens={times}
+                itens={props.times}
                 obrigatorio={true}
                 valor={time}
                 aoAlterado = {valor => setTime(valor)}
@@ -69,6 +74,8 @@ const Form = (props) => {
                 
                 
                 />
+
+            
                 
                 <Button>Criar Card</Button>
             </form>
